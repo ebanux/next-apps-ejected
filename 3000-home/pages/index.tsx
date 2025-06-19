@@ -31,9 +31,12 @@ const Home = () => {
         <li>
           <a
             href="#reloadPage"
-            onClick={() => (window.location.href = 'http://localhost:3000')}
+            onClick={() =>
+              (window.location.href =
+                process.env.NEXT_PUBLIC_HOME_URL || 'http://localhost:3000')
+            }
           >
-            localhost:3000
+            {process.env.NEXT_PUBLIC_HOME_URL || 'http://localhost:3000'}
           </a>
           {' – '}
           <b>home</b>
@@ -41,9 +44,12 @@ const Home = () => {
         <li>
           <a
             href="#reloadPage"
-            onClick={() => (window.location.href = 'http://localhost:3001')}
+            onClick={() =>
+              (window.location.href =
+                process.env.NEXT_PUBLIC_SHOP_URL || 'http://localhost:3001')
+            }
           >
-            localhost:3001
+            {process.env.NEXT_PUBLIC_SHOP_URL || 'http://localhost:3001'}
           </a>
           {' – '}
           <b>shop</b>
@@ -51,9 +57,12 @@ const Home = () => {
         <li>
           <a
             href="#reloadPage"
-            onClick={() => (window.location.href = 'http://localhost:3002')}
+            onClick={() =>
+              (window.location.href =
+                process.env.NEXT_PUBLIC_CHECKOUT_URL || 'http://localhost:3002')
+            }
           >
-            localhost:3002
+            {process.env.NEXT_PUBLIC_CHECKOUT_URL || 'http://localhost:3002'}
           </a>
           {' – '}
           <b>checkout</b>
@@ -73,7 +82,9 @@ const Home = () => {
           <tr>
             <td>✅</td>
             <td>
-              Loading remote component (CheckoutTitle) from localhost:3002
+              {`Loading remote component (CheckoutTitle) from ${
+                process.env.NEXT_PUBLIC_CHECKOUT_URL || 'http://localhost:3002'
+              }`}
               <br />
               <blockquote>
                 lazy(()=&gt;import(&apos;checkout/CheckoutTitle&apos;))
@@ -103,7 +114,9 @@ const Home = () => {
           <tr>
             <td>✅</td>
             <td>
-              Loading remote component with PNG image from localhost:3001
+              {`Loading remote component with PNG image from ${
+                process.env.NEXT_PUBLIC_SHOP_URL || 'http://localhost:3001'
+              }`}
               <br />
               <blockquote>(check publicPath fix in image-loader)</blockquote>
             </td>
@@ -119,7 +132,9 @@ const Home = () => {
           <tr>
             <td>✅</td>
             <td>
-              Loading remote component with SVG from localhost:3001
+              {`Loading remote component with SVG from ${
+                process.env.NEXT_PUBLIC_SHOP_URL || 'http://localhost:3001'
+              }`}
               <br />
               <blockquote>(check publicPath fix in url-loader)</blockquote>
             </td>

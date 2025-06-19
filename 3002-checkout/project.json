@@ -69,7 +69,7 @@
       "options": {
         "cypressConfig": "apps/3002-checkout/cypress.config.ts",
         "testingType": "e2e",
-        "baseUrl": "http://localhost:3002"
+        "baseUrl": "${NEXT_PUBLIC_CHECKOUT_URL}"
       },
       "defaultConfiguration": "development",
       "configurations": {

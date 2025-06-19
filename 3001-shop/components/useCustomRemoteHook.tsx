@@ -7,6 +7,8 @@ function useCustomRemoteHook(friendID) {
     console.log('some custom hook');
   }, []);
 
-  return 'Custom hook from localhost:3002 works!';
+  const checkoutUrl =
+    process.env.NEXT_PUBLIC_CHECKOUT_URL || 'http://localhost:3002';
+  return `Custom hook from ${checkoutUrl} works!`;
 }
 export default useCustomRemoteHook;

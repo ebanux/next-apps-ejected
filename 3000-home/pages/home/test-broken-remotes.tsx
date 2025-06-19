@@ -13,7 +13,8 @@ export default function TestBrokenRemotes() {
       <p>
         Check wrong response for remoteEntry –{' '}
         <Link href="/wrong-entry">/wrong-entry</Link> (on
-        http://localhost:3000/_next/static/chunks/remoteEntry<b>Wrong</b>
+        {`${process.env.NEXT_PUBLIC_HOME_URL || 'http://localhost:3000'}`}
+        /_next/static/chunks/remoteEntry<b>Wrong</b>
         .js)
       </p>
     </div>

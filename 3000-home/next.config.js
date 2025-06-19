@@ -6,15 +6,23 @@ const nextConfig = {
     config.watchOptions = {
       ignored: ['**/node_modules/**', '**/@mf-types/**'],
     };
-    // used for testing build output snapshots
+    // build remote URLs from env variables so deployments can
+    // override where each app is hosted
+    const homeUrl =
+      process.env.NEXT_PUBLIC_HOME_URL || 'http://localhost:3000';
+    const shopUrl =
+      process.env.NEXT_PUBLIC_SHOP_URL || 'http://localhost:3001';
+    const checkoutUrl =
+      process.env.NEXT_PUBLIC_CHECKOUT_URL || 'http://localhost:3002';
+
     const remotes = {
-      checkout: `checkout@http://localhost:3002/_next/static/${
+      checkout: `checkout@${checkoutUrl}/_next/static/${
         isServer ? 'ssr' : 'chunks'
       }/remoteEntry.js`,
-      home_app: `home_app@http://localhost:3000/_next/static/${
+      home_app: `home_app@${homeUrl}/_next/static/${
         isServer ? 'ssr' : 'chunks'
       }/remoteEntry.js`,
-      shop: `shop@http://localhost:3001/_next/static/${
+      shop: `shop@${shopUrl}/_next/static/${
         isServer ? 'ssr' : 'chunks'
       }/remoteEntry.js`,
     };

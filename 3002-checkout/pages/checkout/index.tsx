@@ -11,7 +11,9 @@ const Checkout = (props) => (
     <div className="hero">
       <h1>checkout page</h1>
       <h3 className="title">
-        This is a federated page owned by localhost:3002!!
+        {`This is a federated page owned by ${
+          process.env.NEXT_PUBLIC_CHECKOUT_URL || 'http://localhost:3002'
+        }!!`}
       </h3>
       <p className="description">
         This application serves code from <code>src/</code> folder.
