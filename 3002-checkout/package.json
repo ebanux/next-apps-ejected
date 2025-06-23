@@ -1,27 +1,19 @@
 {
-  "name": "@module-federation/3002-checkout",
+  "name": "3002-checkout",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@ant-design/cssinjs": "^1.21.0",
-    "antd": "5.19.1",
-    "lodash": "4.17.21",
     "next": "15.3.3",
     "react": "19.1.0",
     "react-dom": "19.1.0"
   },
   "devDependencies": {
     "@module-federation/nextjs-mf": "0.0.0-next-20250618045528",
-    "@module-federation/runtime": "0.0.0-next-20250618045528",
-    "@module-federation/sdk": "0.0.0-next-20250618045528",
-    "@types/react": "^19.1.8",
-    "eslint-plugin-cypress": "^2.15.2",
-    "eslint-config-next": "^15.3.4",
-    "cypress": "^14.5.0"
+    "@types/react": "^19.1.8"
   },
   "scripts": {
     "dev": "NEXT_PRIVATE_LOCAL_WEBPACK=true next dev -p 3002",
-    "start": "next start",
-    "build": "NEXT_PRIVATE_LOCAL_WEBPACK=true next build"
+    "build": "NEXT_PRIVATE_LOCAL_WEBPACK=true next build",
+    "start": "next start -p 3002"
   }
 }
