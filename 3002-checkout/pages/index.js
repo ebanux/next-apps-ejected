@@ -1,2 +1,3 @@
-import Home from 'home/pages/index';
-export default Home;
+export default function Checkout() {
+  return <h1>Hello Word Checkout</h1>;
+}
